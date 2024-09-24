@@ -1,3 +1,5 @@
 flask
 SPARQLWrapper
 rdflib
+ollama
+fire
