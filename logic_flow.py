@@ -103,4 +103,5 @@ def get_actions_for_heritage_object(object):
 
 # Example with a plan: get_actions_for_heritage_object(14167)
 # Example after 2015: get_actions_for_heritage_object(31061)
+# Example with actions in decision: get_actions_for_heritage_object(34145)
 # Example before 2015: get_actions_for_heritage_object(135025)
