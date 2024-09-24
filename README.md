@@ -1,6 +1,7 @@
-# Mu Python template
+# Desingation objects enhancer service
+## ABB Hackathon group 1
 
-Template for [mu.semte.ch](http://mu.semte.ch)-microservices written in Python3. Based on the [Flask](https://palletsprojects.com/p/flask/)-framework.
+Fork of template for [mu.semte.ch](http://mu.semte.ch)-microservices written in Python3. Based on the [Flask](https://palletsprojects.com/p/flask/)-framework.
 
 ## Quickstart
 
