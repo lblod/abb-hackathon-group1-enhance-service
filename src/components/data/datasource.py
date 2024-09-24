@@ -1,4 +1,4 @@
-import abc
+import pdfplumber
 
 
 class DataSource:
@@ -17,7 +17,8 @@ class DataSource:
         self.file = file
 
     def __byte_pdf_logic(self) -> list[str]:
-        pass
+        with pdfplumber.open(self.file) as pdf:
+            return [page.extract_text() for page in pdf.pages]
 
     @property
     def content(self) -> list[str]:

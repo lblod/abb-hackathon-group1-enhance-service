@@ -41,7 +41,13 @@ class PreProcessingStage(Stage):
                 attachments = get_list_of_attachments(decision_id)
                 for i in attachments.json():
                     if i['bestandssoort']['soort'] == 'Besluit':
-                        print(download_file(decision_id, i['id']))
+                        dsource = DataSource(
+                            filetype="byte_pdf",
+                            file=download_file(decision_id, i['id'])
+                        )
+                        print(dsource.content)
+                        return dsource
+
             else:
                 print('Get the law text from the Codex and get a list of actions from it.')
 

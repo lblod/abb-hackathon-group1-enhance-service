@@ -1,6 +1,5 @@
 import requests
 from datetime import datetime
-import pdfplumber
 from io import BytesIO
 import dataclasses
 
@@ -89,11 +88,8 @@ def download_file(decision_id, file_id):
     pdf_bytes = r.content  # your byte data
 
     # Create a BytesIO object from the byte data
-    pdf_stream = BytesIO(pdf_bytes)
-    with pdfplumber.open(pdf_stream) as pdf:
-        all_text = ""
-        for page in pdf.pages:
-            all_text += page.extract_text()
+    return BytesIO(pdf_bytes)
+
 
 
 
