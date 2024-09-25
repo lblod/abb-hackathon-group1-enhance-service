@@ -40,21 +40,25 @@ def get_list_of_attachments(decision_id):
     r = requests.get(url='https://besluiten.onroerenderfgoed.be/besluiten/' + str(decision_id) + '/bestanden', headers=headers)
     return r
 
-def download_file(decision_id, file_id):
-    url = 'https://besluiten.onroerenderfgoed.be/besluiten/'+ str(decision_id) + '/bestanden/' + str(file_id)
-    r = requests.get(url)
-    # Assuming `pdf_bytes` contains the PDF file as bytes
-    pdf_bytes = r.content  # your byte data
-
-    # Create a BytesIO object from the byte data
+def download_pdf(pdf_bytes):
     pdf_stream = BytesIO(pdf_bytes)
     with pdfplumber.open(pdf_stream) as pdf:
         all_text = ""
         for page in pdf.pages:
             all_text += page.extract_text()
 
-        print(all_text)
-    
+    print(all_text)
+
+def download_file(decision_id, file_id):
+    url = 'https://besluiten.onroerenderfgoed.be/besluiten/'+ str(decision_id) + '/bestanden/' + str(file_id)
+    r = requests.get(url)
+    return r.content
+
+def download_plan_file(plan_id, file_id):
+    url = 'https://plannen.onroerenderfgoed.be/plannen/' + str(plan_id) + '/bestanden/' +  str(file_id)
+    r = requests.get(url)
+    return r.content
+
 def get_list_of_actions(decision):
     decision = decision.json()
     # We start from the assumption that the decission referred is a valid one. We will not implement to check wether it is expired or not
@@ -79,8 +83,11 @@ def get_actions_for_heritage_object(object):
     plan = check_maintenance_plan(object)
     if len(plan.json()) != 0:
         #If a plan is found, return it, and check if the user is satisfied
-        print(get_maintenance_plan(plan.json[0]['uri']))
-        return 'Plan gevonden'
+        plan= get_maintenance_plan(plan.json()[0]['uri'])
+        for file in plan.json()['bestanden']:
+            pdf_bytes = download_plan_file(plan.json()['id'], file['id'])
+            download_pdf(pdf_bytes)
+        return 'Plan found! Reference the allowed actions inside the maintenance plan'
     else:
         #If no plan is found, retrieve the relevant designation objects.
         do = get_do_from_response(response)
@@ -96,7 +103,8 @@ def get_actions_for_heritage_object(object):
             attachments = get_list_of_attachments(decision_id)
             for i in attachments.json():
                 if i['bestandssoort']['soort'] == 'Besluit':
-                    print(download_file(decision_id, i['id']))
+                    content = download_file(decision_id, i['id'])
+                    download_pdf(content)
         else:
             print('Get the law text from the Codex and get a list of actions from it.')
 
