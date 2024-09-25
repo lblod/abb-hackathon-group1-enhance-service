@@ -1,4 +1,4 @@
-from ._base import LLM
+from .base import LLM
 
 from ollama import Client
 import os
