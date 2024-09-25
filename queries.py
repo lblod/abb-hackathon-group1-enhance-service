@@ -13,11 +13,14 @@ def insert_heritage_objects(heritage_objects):
     
     for heritage_object in heritage_objects:
         for heritage_object_id, rules in heritage_object.items():
+            heritage_id = sparql_escape_int(heritage_object_id)
+            heritage_uri = sparql_escape_uri(f"https://id.erfgoed.net/aanduidingsobjecten/{heritage_id}")
+
             # Loop through the inner dictionary to get rule, source, and source_type
             for rule_entry in rules:
                 rule = sparql_escape_string(rule_entry['rule'])
                 source = sparql_escape_int(rule_entry['source'])
-                source_uri = f"<https://id.erfgoed.net/besluiten/{source}>" # hard-coded besluit for now --> should be different based on source_type
+                source_uri = sparql_escape_uri(f"https://id.erfgoed.net/besluiten/{source}") # hard-coded besluit for now --> should be different based on source_type
                 
                 # Generate UUIDs for the annotation and validation
                 annotation_uuid = generate_uuid()
@@ -42,6 +45,7 @@ def insert_heritage_objects(heritage_objects):
                       mu:uuid "{annotation_uuid}" ;
                       oa:hasBody {rule} ;
                       oa:hasTarget {source_uri} ;
+                      oa:hasTarget {heritage_uri} ;
                       ext:hasValidation <http://data.lblod.info/validations/{validation_uuid}> .
                     <http://data.lblod.info/validations/{validation_uuid}> a vair:Validation ;
                       mu:uuid "{validation_uuid}" ;
