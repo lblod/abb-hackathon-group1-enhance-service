@@ -43,7 +43,6 @@ class PreProcessingStage(Stage):
             # If the date is > 1-1-2015, download the 'besluit' pdf for reference of actions
             if datetime.strptime(decision.json()['datum_ondertekening'], '%Y-%m-%d') > datetime.strptime('2015-1-1',
                                                                                                          '%Y-%m-%d'):
-                print('Get the PDF and look at Art. 5: ')
                 attachments = get_list_of_attachments(decision_id)
                 for i in attachments.json():
                     if i['bestandssoort']['soort'] == 'Besluit':
@@ -77,7 +76,8 @@ class PreProcessingStage(Stage):
 
         for heritage_id in heritage_ids:
             heritage_files.append(
-                {heritage_id:list(self.get_actions_for_heritage_object(heritage_id))}
+                {"id": heritage_id,
+                 "object": list(self.get_actions_for_heritage_object(heritage_id))}
             )
 
         return heritage_files

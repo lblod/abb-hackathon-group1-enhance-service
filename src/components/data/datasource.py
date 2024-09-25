@@ -29,6 +29,7 @@ class DataSource:
     def content(self) -> list[str]:
         match self.filetype.lower():  # ideally we use enums here!
             case "byte_pdf":
+                self.filetype = "besluit"
                 return self.__byte_pdf_logic()
 
             case "codex":
