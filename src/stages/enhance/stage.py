@@ -1,5 +1,6 @@
 import os
 
+from typing import Any
 from ...components.llm import OllamaLLM
 from ...components.retry_prompter import OutputRetryParser
 from ...components.validators import JsonValidator
@@ -15,7 +16,7 @@ class EnchanceStage(Stage):
         self.prompter = OutputRetryParser(self.llm)
         self.validator = JsonValidator()
         
-    def __call__(self, *args: os.Any, **kwds: os.Any) -> os.Any:
+    def run(self, *args: Any, **kwds: Any) -> Any:
         rules = []
         
         for item in args:
