@@ -5,7 +5,6 @@ from typing import Any, TYPE_CHECKING
 if TYPE_CHECKING:
     from ...components.data.datasource import DataSource
 
-
 from ...components.llm import OllamaLLM
 from ...components.retry_prompter import OutputRetryParser
 from ...components.validators import JsonValidator
@@ -41,7 +40,7 @@ class EnchanceStage(Stage):
                         print("EMPTY RULE:", extracted_rule)
                         continue
 
-                    rules.append(dict(source = _id, source_type=data_obj.filetype, rule=rule))
+                    rules.append(dict(source=_id, source_type=data_obj.filetype, rule=rule))
 
         return rules
 
@@ -49,6 +48,26 @@ class EnchanceStage(Stage):
         messages = get_prompt(legal_content)
         response = self.prompter(messages, self.validator)
         return response
+
+
+
+    """
+    Ideally we use this startegy, but for the sake of time skip rn
+    --> will need an update on the validator to work with state aswel
+    
+    def __extract(self, legal_content):
+        response = []
+        for item in legal_content:
+            messages = get_prompt(item)
+            res, success = self.prompter(messages, self.validator)
+            if not success:
+                print("FAILED")
+                continue
+
+            response += res
+
+        return response
+    """
 
     """[
         {
