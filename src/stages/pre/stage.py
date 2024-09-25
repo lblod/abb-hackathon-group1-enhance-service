@@ -46,12 +46,10 @@ class PreProcessingStage(Stage):
                             filetype="byte_pdf",
                             file=download_file(decision_id, i['id'])
                         )
-                        print(dsource.content)
-                        return dsource
+                        yield dsource
 
             else:
-                print(codex.content)
-                return codex
+                yield codex
 
 
     def run(self) -> list[dict[int, list[DataSource]]]:
@@ -70,9 +68,15 @@ class PreProcessingStage(Stage):
         """
 
         heritage_ids = [38746]
+        heritage_files = []
 
         for heritage_id in heritage_ids:
-            print(self.get_actions_for_heritage_object(heritage_id))
+            heritage_files.append(
+                dict(heritage_id = list(self.get_actions_for_heritage_object(heritage_id)))
+            )
+
+        return heritage_files
+
 
 
 if __name__ == "__main__":
