@@ -1,6 +1,5 @@
 import requests
 from datetime import datetime
-import pdfplumber
 from io import BytesIO
 
 def get_heritage_object(heritage_object_id):
@@ -19,7 +18,7 @@ def get_maintenance_plan(maintenance_uri):
     r = requests.get(url= maintenance_uri, header=headers)
     return r
 
-#Right now the decision is made that if there are multiple designation objects found, we simply take the first one
+#Right now the decision is made that if there are multiple desiUntitledgnation objects found, we simply take the first one
 def get_do_from_response(json):
     for i in json['relaties']:
         if 'bescherming' in i:
@@ -83,11 +82,8 @@ def get_actions_for_heritage_object(object):
     plan = check_maintenance_plan(object)
     if len(plan.json()) != 0:
         #If a plan is found, return it, and check if the user is satisfied
-        plan= get_maintenance_plan(plan.json()[0]['uri'])
-        for file in plan.json()['bestanden']:
-            pdf_bytes = download_plan_file(plan.json()['id'], file['id'])
-            download_pdf(pdf_bytes)
-        return 'Plan found! Reference the allowed actions inside the maintenance plan'
+        print(get_maintenance_plan(plan.json()[0]['uri']))
+        return 'Plan gevonden'
     else:
         #If no plan is found, retrieve the relevant designation objects.
         do = get_do_from_response(response)
@@ -113,3 +109,7 @@ def get_actions_for_heritage_object(object):
 # Example after 2015: get_actions_for_heritage_object(31061)
 # Example with actions in decision: get_actions_for_heritage_object(34145)
 # Example before 2015: get_actions_for_heritage_object(135025)
+
+
+if __name__ == "__main__":
+    get_actions_for_heritage_object(14167)

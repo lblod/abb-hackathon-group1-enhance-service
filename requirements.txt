@@ -3,3 +3,5 @@ SPARQLWrapper
 rdflib
 ollama
 fire
+requests
+pdfplumber
