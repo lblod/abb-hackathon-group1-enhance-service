@@ -1,6 +1,7 @@
 from ..base import Stage
 from .utils import *
 from ...components.data.datasource import DataSource
+from ...components.data import codex
 from datetime import datetime
 
 
@@ -49,7 +50,9 @@ class PreProcessingStage(Stage):
                         return dsource
 
             else:
-                print('Get the law text from the Codex and get a list of actions from it.')
+                print(codex.content)
+                return codex
+
 
     def run(self) -> list[dict[int, list[DataSource]]]:
         """
@@ -74,3 +77,5 @@ class PreProcessingStage(Stage):
 
 if __name__ == "__main__":
     PreProcessingStage().run()
+    print(codex.content)
+

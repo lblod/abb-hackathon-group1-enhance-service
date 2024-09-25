@@ -14,16 +14,26 @@ class DataSource:
 
     def __init__(self, filetype: str, file: bytes):
         self.filetype = filetype
-        self.file = file
 
-    def __byte_pdf_logic(self) -> list[str]:
+        if self.filetype == "codex":
+            self.file = open("./src/wet.pdf", "rb")
+
+        else:
+            self.file = file
+
+    def __byte_pdf_logic(self, start_page: int = 0, end_page: int = -1) -> list[str]:
         with pdfplumber.open(self.file) as pdf:
-            return [page.extract_text() for page in pdf.pages]
+            return [page.extract_text() for page in pdf.pages][start_page: end_page]
 
     @property
     def content(self) -> list[str]:
         match self.filetype.lower():  # ideally we use enums here!
             case "byte_pdf":
                 return self.__byte_pdf_logic()
+
+            case "codex":
+                return self.__byte_pdf_logic(111, 118)
+
+
             case _:
                 raise ValueError("unsupported filetype")
