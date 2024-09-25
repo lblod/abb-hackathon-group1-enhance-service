@@ -52,7 +52,7 @@ class PreProcessingStage(Stage):
                 yield codex
 
 
-    def run(self) -> list[dict[int, list[DataSource]]]:
+    def run(self, *args, **kwargs) -> list[dict[int, list[DataSource]]]:
         """
         1. Gather data (if needs be a preselection list of ids we randomly selected)
         2. For each element in the data, gather:
@@ -67,12 +67,12 @@ class PreProcessingStage(Stage):
             This datasource class can easily be red in the upcomming step
         """
 
-        heritage_ids = [38746]
+        heritage_ids = kwargs.get("heritage_objects", [])
         heritage_files = []
 
         for heritage_id in heritage_ids:
             heritage_files.append(
-                dict(heritage_id = list(self.get_actions_for_heritage_object(heritage_id)))
+                {heritage_id:list(self.get_actions_for_heritage_object(heritage_id))}
             )
 
         return heritage_files
