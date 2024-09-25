@@ -1,0 +1,105 @@
+{
+    "generiek": {
+        "rules": [
+            "de aanmerkelijke reliëfwijziging van de bodem;",
+            "elke handeling die een aanzienlijke wijziging van de landschapskenmerken tot gevolg heeft, met uitzondering van cultuurgewassen, onder meer voor de landbouw, en tuinbeplanting."
+        ],
+        "article": "6.2.3"
+    },
+
+    "monument": {
+        "rules": [
+            "Je mag geen constructie plaatsen, slopen, verbouwen of heropbouwen.",
+            "Je mag geen constructieve elementen verwijderen, vervangen, wijzigen of verstevigen.",
+            "Je mag geen historische materialen verwijderen, vervangen of wijzigen zonder behandeling.",
+            "Het is niet toegestaan om de afwerkingslagen van een buitenmuur te wijzigen in kleur, textuur of samenstelling.",
+            "Je mag geen buitenschrijnwerken, deuren, ramen, luiken, poorten vervangen zonder het oorspronkelijke uitzicht te behouden.",
+            "Het is niet toegestaan om opschriften, publiciteitsinrichtingen of uithangborden aan te brengen zonder beperkingen (max 4m²).",
+            "Je mag geen bovengrondse nutsvoorzieningen en leidingen plaatsen of wijzigen.",
+            "Het is niet toegestaan om afsluitingen met prikkeldraad ten behoeve van verkeersbeheer aan te brengen.",
+            "Je mag geen wegen, paden, bomen of struiken beschadigen zonder vergunning.",
+            "Het is niet toegestaan om meer dan 30m² extra verharding aan te leggen zonder vergunning.",
+            "Je mag geen straatmeubilair aanbrengen of wijzigen dat niet aard- en nagelvast is, behalve verkeersborden."
+        ],
+        "article": "6.2.4"
+    },
+
+    "monument_interieur": {
+        "rules": [
+            "het uitvoeren van destructief materiaaltechnisch onderzoek;",
+            "het uitvoeren van structurele werken en het toevoegen van nieuwe structuren;",
+            "het verwijderen, vervangen of wijzigen van historische materialen en het toepassen van behandelingen met als doel de historische materialen te reinigen, te herstellen, te verduurzamen of te beschermen tegen verweer en aantasting;",
+            "het verwijderen, vervangen of wijzigen van plafonds, gewelven, vloeren, trappen, binnenschrijnwerken, inclusief de al dan niet figuratieve beglazing, lambrisering, beslag, hang- en sluitwerk, en van de waardevolle interieurdecoratie;",
+            "het bepleisteren van niet-bepleisterde elementen of het bepleisteren met een andere samenstelling of textuur, alsook het ontpleisteren van bepleisterde elementen;",
+            "het beschilderen van ongeschilderde elementen of het schilderen in andere kleuren of kleurschakeringen of met een andere verfsoort dan de aanwezige;",
+            "het uitvoeren van werken aan en het verplaatsen of verwijderen van de cultuurgoederen die opgenomen zijn in een beschermingsbesluit."
+        ],
+        "article": "6.2.8"
+    },
+
+    "cultureel_erfgoed": {
+        "rules": [
+            "het uitvoeren van destructief materiaaltechnisch onderzoek;",
+            "het uitvoeren van structurele werken en het toevoegen van nieuwe structuren;",
+            "het verwijderen, vervangen of wijzigen van historische materialen en het toepassen van behandelingen met als doel de historische materialen te reinigen, te herstellen, te verduurzamen of te beschermen tegen verweer en aantasting;",
+            "het verwijderen, vervangen of wijzigen van plafonds, gewelven, vloeren, trappen, binnenschrijnwerken, inclusief de al dan niet figuratieve beglazing, lambrisering, beslag, hang- en sluitwerk, en van de waardevolle interieurdecoratie;",
+            "het bepleisteren van niet-bepleisterde elementen of het bepleisteren met een andere samenstelling of textuur, alsook het ontpleisteren van bepleisterde elementen;",
+            "het beschilderen van ongeschilderde elementen of het schilderen in andere kleuren of kleurschakeringen of met een andere verfsoort dan de aanwezige;",
+            "het uitvoeren van werken aan en het verplaatsen of verwijderen van de cultuurgoederen die opgenomen zijn in een beschermingsbesluit."
+        ],
+        "article": "6.2.8"
+    },
+
+    "industrieel_erfgoed": {
+        "rules": [
+            "het wijzigen, vervangen of herstellen van het beschermd goed of onderdeel ervan met niet-originele materialen en constructietechnieken;",
+            "het volledig of gedeeltelijk uiteen nemen, het verplaatsen of het wijzigen van de technische kenmerken van toestellen."
+        ],
+        "article": "6.2.9"
+    },
+
+    "orgels": {
+        "rules": [
+            "het wijzigen van de onmiddellijke akoestische, thermische of klimatologische omgeving;",
+            "het winddicht maken van windladen waarbij werken nodig zijn aan de fundamenttafel, de canceldichting onderaan, de slepen, de pijpstokken, pijproosters en ventielen;",
+            "het vernieuwen of opnieuw belederen van de blaasbalgen, dichtingswerken aan de windkanalen;",
+            "systematisch en globaal herstelwerk aan of uitlengen van historisch pijpwerk, alsook verstevigings- en herstelwerk aan historische frontpijpen;",
+            "soldeerwerk verrichten aan oude pijpen, opsneden verlagen of verhogen, inkorten van pijpwerk, en systematisch wijzigen van voetopeningen of het aanbrengen van nieuwe steminsnijdingen;",
+            "kaders van windladen doorboren en laden onderaan doorprikken;",
+            "wijzigingen aanbrengen aan de orgelkast;",
+            "het demonteren, verplaatsen of vervangen van het orgel of delen ervan."
+        ],
+        "article": "6.2.10"
+    },
+
+    "klokken_klokkenspelen_beiaarden": {
+        "rules": [
+            "werken aan de klokken zelf: lassen van scheuren, herstel van kronen, stemmingscorrecties, restaureren of vervangen van klepels, het keren van een klok met als doel een nieuw slagvlak te creëren;",
+            "het verplaatsen van een klok, zowel binnen de bestaande klokkenstoel als naar een andere locatie;",
+            "het vervangen van ophangconstructies en luidbalken;",
+            "het uitbreiden van een gelui of een beiaard;",
+            "het restaureren of vervangen van een klokkenstoel, van luidwielen, van beiaardklavieren, speelmechanieken of speeltrommels."
+        ],
+        "article": "6.2.11"
+    },
+
+    "uurwerken": {
+        "rules": [
+            "het vervangen van opwindsystemen en het herstellen van originele gewichtsaandrijving;",
+            "het reinigen of verven van onderdelen;",
+            "het herstellen van de wijzeraandrijvingen;",
+            "het vervangen van originele onderdelen;",
+            "het mechanisch ingrijpen aan authentiek materiaal;",
+            "het verplaatsen van een uurwerk, zowel binnen de klokkentoren als naar een andere locatie;",
+            "het buiten gebruik stellen van een historisch uurwerk."
+        ],
+        "article": "6.2.12"
+    },
+
+    "begraafplaatsen": {
+        "rules": [
+            "Het ontgraven van een binnenkerkse begraving of een gesloten begraafplaats binnen een beschermd monument, een beschermd stads- of dorpsgezicht of een beschermd cultuurhistorisch landschap kan niet worden aangevat zonder de toelating van het agentschap."
+        ],
+        "article": "6.2.13"
+    }
+}
